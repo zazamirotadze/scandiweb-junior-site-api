@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 
 $parts = explode("/", $_SERVER["REQUEST_URI"]);
 $length = count($parts);
-if ($parts[3] != "products" || $length !== 4) {
+if ($parts[1] != "products" || $length !== 2) {
     http_response_code(404);
     exit;
 }
