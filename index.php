@@ -22,8 +22,6 @@ if ($parts[1] != "products" || $length !== 2) {
     exit;
 }
 
-
-
 $hostname = getenv("DB_HOSTNAME");
 $databaseName = getenv("DB_DATABASE");
 $username = getenv("DB_USERNAME");
