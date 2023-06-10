@@ -22,8 +22,7 @@ if ($parts[1] != "products" || $length !== 2) {
     exit;
 }
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+
 
 $hostname = getenv("DB_HOSTNAME");
 $databaseName = getenv("DB_DATABASE");
