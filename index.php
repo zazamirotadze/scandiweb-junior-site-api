@@ -25,12 +25,16 @@ if ($parts[1] != "products" || $length !== 2) {
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$database = new \ZazaScandiweb\RestClass\Database(
-    $_ENV["DB_HOSTNAME"],
-    $_ENV["DB_DATABASE"],
-    $_ENV["DB_USERNAME"],
-    $_ENV["DB_PASSWORD"]
-);
+$hostname = getenv("DB_HOSTNAME");
+$databaseName = getenv("DB_DATABASE");
+$username = getenv("DB_USERNAME");
+$password = getenv("DB_PASSWORD");
 
+$database = new \ZazaScandiweb\RestClass\Database(
+    $hostname,
+    $databaseName,
+    $username,
+    $password
+);
 $controller = new \ZazaScandiweb\Controller\ProductController($database);
 $controller->processRequest($_SERVER["REQUEST_METHOD"]);
